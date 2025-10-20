@@ -76,15 +76,24 @@ def afficher_menu() -> None:
 
 def obtenir_operation() -> str:
     choix = input("Votre choix: ").strip().lower()
-    if choix in ("1", "+"): return "+"
-    if choix in ("2", "-"): return "-"
-    if choix in ("3", "*"): return "*"
-    if choix in ("4", "/"): return "/"
-    if choix in ("5", "^"): return "^"
-    if choix in ("6", "%"): return "%"
-    if choix in ("7", "sqrt", "r", "√"): return "sqrt"
-    if choix in ("h", "hist", "historique"): return "h"
-    if choix in ("q", "quit", "exit"): return "q"
+    if choix in ("1", "+"): 
+        return "+"
+    if choix in ("2", "-"):
+        return "-"
+    if choix in ("3", "*"):
+        return "*"
+    if choix in ("4", "/"): 
+        return "/"
+    if choix in ("5", "^"): 
+        return "^"
+    if choix in ("6", "%"): 
+        return "%"
+    if choix in ("7", "sqrt", "r", "√"): 
+        return "sqrt"
+    if choix in ("h", "hist", "historique"):
+        return "h"
+    if choix in ("q", "quit", "exit"):
+        return "q"
     print("Choix invalide. Réessayez.")
     return ""
 
@@ -147,11 +156,13 @@ def main() -> None:
             resultat = calculer(op, a, b)
             print(f"Résultat : {a} {op} {b} = {resultat:.{nb_decimales}f}")
             historique.append(f"{a} {op} {b} = {resultat:.{nb_decimales}f}")
+        except ZeroDivisionError as e:
+            print(f"Erreur: {e}")
         except Exception as e:
             print(f"Erreur : {e}")
 
-        #  continue ou non
-        continuer = input("Continuer ? (oui/non): ").strip().lower()
+        # Option: demander si l'utilisateur veut continuer
+        continuer = input("Continuer ? (o/n): ").strip().lower()
         if continuer not in ("o", "oui", "y", "yes", ""):
             print("Au revoir.")
             break
@@ -169,6 +180,7 @@ def tests_rapides():
 
 
 if __name__ == "__main__":
-    tests_rapides()
-    main()
+     tests_rapides()
+main()
+
 
