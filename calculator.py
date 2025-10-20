@@ -1,5 +1,5 @@
 """
-TP 1 — Calculatrice en Python (Complète)
+TP 1 — Calculatrice en Python (Première séance)
 
 Objectifs pédagogiques:
 - Entrées/sorties avec input() et print()
@@ -8,7 +8,6 @@ Objectifs pédagogiques:
 - Conditions (if/elif/else) et boucles (while)
 - Gestion d'erreurs simples (division par zéro, saisie invalide)
 - Formatage de chaînes (f-strings)
-- Historique et extensions
 """
 
 import math
@@ -170,4 +169,6 @@ def tests_rapides():
 
 
 if __name__ == "__main__":
+    tests_rapides()
     main()
+
